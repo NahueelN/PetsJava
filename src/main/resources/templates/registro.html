@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head th:insert="~{fragments/header}"></head>
+<body class="container mt-5">
+
+<h2>Registrar Usuario</h2>
+
+<div class="container">
+    <div class="row">
+
+        <div class="col-md-6 offset-md-3">
+
+            <form th:action="@{/registro}" method="post" th:object="${usuario}" class="mb-4">
+                <div class="form-group">
+                    <label for="nombre">Nombre de usuario:</label>
+                    <input type="text" id="nombre" name="nombre" th:field="*{nombre}" class="form-control">
+
+                </div>
+                <div class="form-group">
+                    <label for="contrasena">Contraseña:</label>
+                    <input type="password" id="contrasena" th:field="*{contrasena}" class="form-control" required>
+                </div>
+            </form>
+            <br>
+            <button type="submit" class="btn btn-primary">Registrarse</button>
+        </div>
+        <p>¿Ya tenes cuenta? <a th:href="@{/login}"></a>Click aquí </p>
+
+    </div>
+
+
+
+
+</div>
+<div th:replace="~{fragments/footer}"></div>
+</body>
+</html>
